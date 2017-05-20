@@ -1,0 +1,292 @@
+h2 {
+	@include rem-fallback(font-size, 4.4);
+	margin-bottom: 36px;
+}
+
+p {
+	@include rem-fallback(font-size, 1.8);
+	line-height: 1.4;
+}
+main {
+	> section {
+		padding: 40px 0;
+
+		p {
+			padding: 0 0 20px;
+		}
+		
+		p:last-child {
+			padding-bottom: 0;
+		}
+	}
+}
+.amenities {
+	li {	
+		@include clearfix();
+		display: block;
+		padding: 0 20px;
+	}
+
+	li + li {
+		margin: 20px 0 0 0; 
+	}
+
+	img {
+		display: block;
+		float: left;
+		margin: 0 40px 40px 0;
+	}
+
+	strong {
+		text-align: left;
+		padding: 0 0 20px 0;
+	}
+
+	p, 
+	a {
+		@include rem-fallback(font-size, 1.9);
+		display: block;
+		margin-bottom: 20px; 
+		text-align: left;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+}
+.book-space {
+	h2 {
+		text-align: left;
+	}
+	
+	> div {
+		font-size: 0;
+		h2,
+		> div {
+			display: inline-block;
+			vertical-align: top;
+			width: 45%;
+			padding: 20px 0 0;
+		}
+		> div {
+			margin-left: 10%;
+		}
+		.rich-text {
+			margin-bottom: 20px;
+		}
+	}
+
+	p {
+		@include rem-fallback(font-size, 1.8);
+	}
+}
+.no-touch {
+	$icon-size: 20px;
+	.carousel > ul li {
+		height: $icon-size;
+		width: $icon-size;
+	}
+}
+.faq {
+	li li {
+		@include rem-fallback(font-size, 1.8);
+	}
+}
+.hero {
+	ul {
+		li,
+		li:first-child {
+			@include rem-fallback(font-size, 2.4);
+		}
+	}
+}
+.join-space {
+	span {
+		@include rem-fallback(font-size, 1.6);
+		text-align: center;
+	}
+
+	i {
+		@include rem-fallback(font-size, 1.5);
+	}
+} 
+.opportunities {
+	font-size: 0;
+
+	h2, 
+	> div {
+		display: inline-block;
+		vertical-align: top;
+		width: 48%;
+	}
+
+	h2 {
+		margin-right: 4%;
+		text-align: left;
+	}
+
+	p {
+		@include rem-fallback(font-size, 1.8);
+		padding: 0 0 14px 0;
+	}	
+}
+.programs {
+	@include clearfix();
+	font-size: 0;
+
+	h2 {
+		text-align: left;
+	}
+
+	ul,
+	section {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	ul { 
+		@include rem-fallback(font-size, 2);
+		width: 30%;
+		margin-right:10%; 
+	}
+
+	section {
+		width: 60%; 
+		float: right;
+	}
+
+	li {
+		padding: 20px 0;
+	}
+
+	li:first-child {
+		padding-top: 0;
+	}
+
+	ul a {
+		color: $blue-2;
+		font-weight: normal;
+		padding-bottom: 12px;
+		border-bottom: 2px solid transparent;
+		min-height: 30px;
+
+		&.selected,
+		&:hover {
+			border-bottom: 2px solid $blue-2;
+		}
+	}
+
+	h3 {
+		@include rem-fallback(font-size, 3.6);
+		padding: 40px 0;
+		text-align: left;
+	}
+
+	&.tabbed-module {
+		section {
+			display: none;
+			&.selected {
+				display: inline-block;
+			}
+		}
+		section + section {
+			margin-top: 0;
+		}
+	}
+}
+.quotes {
+	li > div {
+		display: table;
+	}
+	
+	img {
+		display: table-cell;	
+		width: 200px;
+		float: none;
+	}
+
+	img + div {
+		@include rem-fallback(padding, 0, 0, 0, 6);
+		display: table-cell;
+		vertical-align: top;
+	}
+
+	p {
+		@include rem-fallback(font-size, 2.3);
+		margin-bottom: 20px; 
+	}
+
+	p + p {
+		@include rem-fallback(font-size, 1.9);
+		display: block;
+		margin-bottom: 20px; 
+	}
+
+	a {
+		@include rem-fallback(font-size, 1.4);
+		display: inline;
+	}
+}
+.space-types {
+	h2 {
+		text-align: left;
+		
+		a {
+			@include rem-fallback(font-size, 3);
+			color: $link-blue;
+			display: inline-block;
+			vertical-align: middle;
+			float: right;
+			padding: 11px 0 12px;
+			border-bottom: 2px solid transparent;
+			&:hover,
+			&:focus {
+				border-bottom: 2px solid $link-blue;
+			}
+		}
+	}
+
+	ul {
+		font-size: 0;
+	}
+
+	li {
+		vertical-align: top;
+		display: inline-block;
+		width: 48%;
+	}
+
+	li:nth-child(odd) {
+		margin-right: 4%;
+	}
+
+	h3 {
+		@include rem-fallback(font-size, 3.6);
+	}
+
+	strong {
+		@include rem-fallback(font-size, 2.4);
+	}
+} 
+.threesixty {
+	display: block;
+	max-width: 1280px;
+	margin: 0 auto;
+
+	div {
+		padding-bottom: 56.25%; /* 16:9 */
+		height: 0;
+		position: relative;
+	}
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: none;
+		max-height: 750px;
+		max-width: 1280px;
+	}
+}

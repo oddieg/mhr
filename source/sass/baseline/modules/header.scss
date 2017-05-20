@@ -1,0 +1,81 @@
+header {
+    @include clearfix();
+    background-color: $light-blue;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    z-index: 800;
+    .logo {
+        display: table;
+        width: 100%;
+        .img,
+        .title,
+        label {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .title {
+            padding-left: 10px;
+            text-transform: uppercase;
+        }
+        .img {
+            vertical-align: top;
+            width: 10%;
+            img {
+                width: 50px;
+            }
+        }
+        label {
+            @include rem-fallback(font-size, 2.8);
+            cursor: pointer;
+            text-align: right;
+            text-indent: 5%;
+            span {
+                display: block;
+                height: 0;
+                width: 0;
+                font-size: 0;
+                overflow: hidden;
+                float: left;
+            }
+        }
+    }
+    nav {
+        form {
+            strong,
+            input {
+                display: none;
+            }
+            ul {
+                background-color: $light-blue;
+                display: none;
+                text-indent: 0;
+                padding: 20px;
+                a,
+                a:visited {
+                    color: $black;
+                    display: block;
+                    padding: 8px 0 8px 14px;
+                    border-left: 2px solid transparent;
+                }
+                & a:hover,
+                & a:visited:hover,
+                & a:focus,
+                .selected a {
+                    border-left: 2px solid $green;
+                    display: block;
+                }
+                li {
+                    @include rem-fallback(font-size, 2);
+                    margin: 20px 0;
+                }
+            }
+            input:checked + ul {
+                display: block;
+            }
+        }
+    }
+    .icon-menu {
+        cursor: pointer;
+    }
+}

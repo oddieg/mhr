@@ -1,0 +1,76 @@
+section {
+    @include clearfix();
+    display: table;
+    padding: 10px;
+    width: 100%;
+	article,
+    .approval {
+        display: block;
+    }
+    .approval {
+    	padding: 10px 0;
+        .counter {
+            @include rem-fallback(font-size, 2.2);
+            padding: 0 5px;
+            vertical-align: top;
+        }
+        .thumb {
+            display: inline-block;
+            width: 34px;
+            height: 34px;
+            background: url('/i/thumbs.jpg') 0 0;
+            &.thumb-up {
+                background-position: 0 0;
+                &:hover {
+                    background-position: -34px 0;
+                }
+            }
+            &.thumb-down {
+                background-position: 0 -34px;
+                &:hover {
+                    background-position: -34px -34px;
+                }
+            }
+        }
+    }
+    article {
+        .tags {
+            font-style: italic;
+            padding: 10px 0;
+        }
+        .cta {
+            @include rem-fallback(font-size, 1.6);
+            @include border-radius(3px);
+            border: 1px solid;
+            cursor: pointer;
+            display: inline-block;
+            padding: 2px 12px;
+            margin: 0 30px 0 0;
+            text-transform: uppercase;
+        }
+        .comment {
+            padding: 20px 0 10px 0;
+            &:not(:last-child) {
+            	border-bottom: 1px solid $light-grey;
+            }
+        }
+    }
+    &:nth-child(even) {
+        background: $purple;
+        color: $white;
+        .approval {
+            .thumb-up {
+                background-position: 0 -68px;
+                &:hover {
+                    background-position: -34px -68px;
+                }
+            }
+            .thumb-down {
+                background-position: 0 -102px;
+                &:hover {
+                    background-position: -34px -102px;
+                }
+            }
+        }
+    }
+}

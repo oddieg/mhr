@@ -1,0 +1,63 @@
+header {
+    @include clearfix();
+    background-color: $light-blue;
+    padding: 30px 30px 0 30px;
+    position: relative;
+    width: 100%;
+    z-index: 800;
+    .logo {
+        display: table;
+        width: 100%;
+        .img,
+        .title,
+        label {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .title {
+            padding-left: 30px;
+            h1 {
+                word-spacing: 9999999px;
+            }
+        }
+        .img {
+            vertical-align: top;
+            img {
+                width: 180px;
+            }
+        }
+        label {
+            display: none;
+        }
+    }
+    nav {
+        margin-left: 180px;
+        form {
+            ul {
+                display: block;
+                padding-left: 30px;
+                a,
+                a:visited {
+                    display: block;
+                    margin: 0 30px 0 0;
+                    padding: 8px;
+                    border-left: none;
+                    border-bottom: 2px solid transparent;
+                }
+                & a:hover,
+                & a:visited:hover,
+                & a:focus,
+                .selected a {
+                    border-left: none;
+                    border-bottom: 2px solid $green;
+                    display: block;
+                }
+                li {
+                    @include rem-fallback(font-size, 1.6);
+                    margin: 20px 0;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
